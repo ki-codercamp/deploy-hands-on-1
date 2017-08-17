@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="todoapp">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="dist/style.css"> -->
+  <link href="style.d4693b232f1d1d0af84eb25882cd8d3c.css" rel="stylesheet"></head>
+  <body ng-controller="HomeController as vm">
+    <h1 style="text-align:center;">TODO APP</h1>
+
+    <div class="container">
+      <form ng-submit="vm.addTodo()">
+        <input class="form-control" type="text" placeholder="What's on your list?" ng-model="vm.newTodo">
+        <!-- <button class="btn btn-primary" type="button" ng-click="vm.addTodo()">Add to my list</button> -->
+      </form>
+      <button type="button" ng-click="vm.clearList()" class="btn btn-warning center-block">delete</button> <br><br>
+
+    </div>
+    <div class="container">
+      <ul>
+        <li ng-repeat="t in vm.todos">
+          <input type="checkbox" ng-model="t.completed">
+          <span ng-class="{'completed':vm.todos.completed}">{{t.item}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="imageBg">
+
+    </div>
+
+
+    <script src="../bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <!-- <script src="dist/vendor.js" charset="utf-8"></script> -->
+    <!-- <script src="dist/main.js" charset="utf-8"></script> -->
+    <!-- <script src="../homeController.js" charset="utf-8"></script> -->
+  <script type="text/javascript" src="vendor.1f7d55020cc027112f36.js"></script><script type="text/javascript" src="main.d484bde67c2886f619f8.js"></script></body>
+</html>
